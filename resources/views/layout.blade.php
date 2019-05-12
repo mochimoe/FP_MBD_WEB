@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Laravel 5.8 CRUD Example Tutorial</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+
+  @yield('css')
 </head>
 <body>
   <div class="container">
