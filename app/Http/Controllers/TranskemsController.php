@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Transkem;
 
 class TranskemsController extends Controller
 {
@@ -13,7 +14,9 @@ class TranskemsController extends Controller
      */
     public function index()
     {
-        //
+        $transkems = Transkem::all();
+
+        return view('transkems.index', compact('transkems'));
     }
 
     /**
@@ -23,7 +26,7 @@ class TranskemsController extends Controller
      */
     public function create()
     {
-        //
+        return view('transkems.create');
     }
 
     /**
@@ -34,7 +37,15 @@ class TranskemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pinjam' => 'required|max:10',
+            'id_petugas' => 'required|max:10',
+            'id_buku' => 'required|max:10',
+            'tanggal_pengembalian' => 'required'
+        ]);
+        $transkem = Transkem::create($validatedData);
+   
+        return redirect('/transkems')->with('success', 'New Transaction is successfully saved');
     }
 
     /**
@@ -79,6 +90,9 @@ class TranskemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transkem = Transkem::find($id);
+
+        $transkem->delete();
+        return redirect('/transkems')->with('success','Transaction removed');
     }
 }

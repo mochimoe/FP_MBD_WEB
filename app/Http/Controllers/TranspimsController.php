@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Transpim;
 
 class TranspimsController extends Controller
 {
@@ -13,7 +14,9 @@ class TranspimsController extends Controller
      */
     public function index()
     {
-        //
+        $transpims = Transpim::all();
+
+        return view('transpims.index', compact('transpims'));
     }
 
     /**
@@ -23,7 +26,7 @@ class TranspimsController extends Controller
      */
     public function create()
     {
-        //
+        return view('transpims.create');
     }
 
     /**
@@ -34,7 +37,15 @@ class TranspimsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_anggota' => 'required|max:10',
+            'id_petugas' => 'required|max:10',
+            'tanggal_pinjam' => 'required',
+            'tanggal_kembali' => 'required'
+        ]);
+        $transpim = Transpim::create($validatedData);
+   
+        return redirect('/transpims')->with('success', 'New Transaction is successfully saved');
     }
 
     /**
@@ -79,6 +90,9 @@ class TranspimsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transpim = Transpim::find($id);
+
+        $transpim->delete();
+        return redirect('/transpims')->with('success','Transaction removed');
     }
 }
