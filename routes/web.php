@@ -26,3 +26,6 @@ Route::resource('petugass','PetugassController');
 Route::resource('raks','RaksController');
 Route::resource('transkems','TranskemsController');
 Route::resource('transpims','TranspimsController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
