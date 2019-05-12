@@ -38,8 +38,8 @@ class AnggotasController extends Controller
     {
         $validatedData = $request->validate([
             'nama_anggota' => 'required',
-            'tgl_lhr' => 'required',
-            'tgl_dftr' => 'required',
+            'tgl_lahir' => 'required',
+            'tgl_daftar' => 'required',
             'kelamin' => 'required',
             'no_hp' => 'required'
         ]);
