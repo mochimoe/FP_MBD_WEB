@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Petugas;
 
 class PetugassController extends Controller
 {
@@ -13,7 +14,9 @@ class PetugassController extends Controller
      */
     public function index()
     {
-        //
+        $petugass = Petugas::all();
+
+        return view('petugass.index', compact('petugass'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PetugassController extends Controller
      */
     public function create()
     {
-        //
+        return view('petugass.create');
     }
 
     /**
@@ -34,7 +37,16 @@ class PetugassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:191',
+            'alamat' => 'required|max:191',
+            'jenis_kelamin' => 'required|max:191',
+            'no_hp' => 'required|max:191',
+            'tanggal_lahir' => 'required'
+        ]);
+        $petugas = Petugas::create($validatedData);
+   
+        return redirect('/petugass')->with('success', 'New Petugas is successfully saved');
     }
 
     /**
@@ -79,6 +91,9 @@ class PetugassController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $petugas = Petugas::find($id);
+
+        $petugas->delete();
+        return redirect('/petugass')->with('success','Petugas removed');
     }
 }

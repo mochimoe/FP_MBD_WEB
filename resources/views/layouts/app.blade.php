@@ -47,7 +47,7 @@
                     <nav id="nav-menu-container">
                             {{-- @if (Route::has('login')) --}}
                         <ul class="nav-menu">
-                                <li class=""><a href="index.html">Home</a></li>
+                                <li class=""><a href="/">Home</a></li>
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="courses.html">Input</a></li>
                                 <li class="menu-has-children"><a href="">Pages</a>
