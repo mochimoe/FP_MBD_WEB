@@ -19,7 +19,7 @@ class CreateBukusTable extends Migration
             $table->integer('id_rak')->unsigned();
             $table->integer('id_penerbit')->unsigned();
             $table->string('Judul');
-            $table->intger('stok')->unsigned();
+            $table->integer('stok')->unsigned();
             $table->date('tanggal_terbit');
             $table->timestamps();
 
