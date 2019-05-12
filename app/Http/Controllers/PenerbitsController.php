@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Penerbit;
 
 class PenerbitsController extends Controller
 {
@@ -13,7 +14,9 @@ class PenerbitsController extends Controller
      */
     public function index()
     {
-        //
+        $penerbits = Penerbit::all();
+
+        return view('penerbits.index', compact('penerbits'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PenerbitsController extends Controller
      */
     public function create()
     {
-        //
+        return view('penerbits.create');
     }
 
     /**
@@ -34,7 +37,12 @@ class PenerbitsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_penerbit' => 'required|max:255'
+        ]);
+        $penerbit = Penerbit::create($validatedData);
+   
+        return redirect('/penerbits')->with('success', 'New Penerbit is successfully saved');
     }
 
     /**

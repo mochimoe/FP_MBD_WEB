@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pengarang;
 
 class PengarangsController extends Controller
 {
@@ -13,7 +14,9 @@ class PengarangsController extends Controller
      */
     public function index()
     {
-        //
+        $pengarangs = Pengarang::all();
+
+        return view('pengarangs.index', compact('pengarangs'));
     }
 
     /**
@@ -23,7 +26,7 @@ class PengarangsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pengarangs.create');
     }
 
     /**
@@ -34,7 +37,12 @@ class PengarangsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_pengarang' => 'required|max:255'
+        ]);
+        $pengarang = Pengarang::create($validatedData);
+   
+        return redirect('/pengarangs')->with('success', 'New Pengarang is successfully saved');
     }
 
     /**

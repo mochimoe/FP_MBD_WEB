@@ -10,7 +10,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Tambahkan Pengarang
+    Tambahkan Penerbit
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,13 +22,13 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('pengarangs.store') }}">
+      <form method="post" action="{{ route('penerbits.store') }}">
           <div class="form-group">
               @csrf
-              <label for="nama_pengarang">Nama Pengarang:</label>
-              <input type="text" class="form-control" name="nama_pengarang"/>
+              <label for="nama_penerbit">Nama Penerbit:</label>
+              <input type="text" class="form-control" name="nama_penerbit"/>
           </div>
-          <button type="submit" class="btn btn-primary">Buat Pengarang</button>
+          <button type="submit" class="btn btn-primary">Buat Penerbit</button>
       </form>
   </div>
 </div>

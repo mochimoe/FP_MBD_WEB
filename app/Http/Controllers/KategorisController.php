@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kategori;
 
 class KategorisController extends Controller
 {
@@ -13,7 +14,9 @@ class KategorisController extends Controller
      */
     public function index()
     {
-        //
+        $kategoris = Kategori::all();
+
+        return view('kategoris.index', compact('kategoris'));
     }
 
     /**
@@ -23,7 +26,7 @@ class KategorisController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategoris.create');
     }
 
     /**
@@ -34,7 +37,12 @@ class KategorisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'jenis' => 'required|max:255'
+        ]);
+        $kategoris = Kategori::create($validatedData);
+   
+        return redirect('/kategoris')->with('success', 'New Kategori is successfully saved');
     }
 
     /**
