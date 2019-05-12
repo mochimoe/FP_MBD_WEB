@@ -15,12 +15,15 @@ class CreateTranspimsTable extends Migration
     {
         Schema::create('transpims', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_anggota');
-            $table->integer('id_petugas');
+            $table->integer('id_anggota')->unsigned();
+            $table->integer('id_petugas')->unsigned();
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
             $table->integer('denda');
             $table->timestamps();
+
+            $table->foreign('id_anggota')->references('id')->on('anggotas')->onDelete('cascade');
+            $table->foreign('id_petugas')->references('id')->on('petugas')->onDelete('cascade');
         });
     }
 

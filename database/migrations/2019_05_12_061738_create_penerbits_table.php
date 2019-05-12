@@ -14,7 +14,7 @@ class CreatePenerbitsTable extends Migration
     public function up()
     {
         Schema::create('penerbits', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nama_penerbit');
             $table->timestamps();
         });

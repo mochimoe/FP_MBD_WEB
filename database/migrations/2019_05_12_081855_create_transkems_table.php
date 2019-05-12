@@ -15,13 +15,18 @@ class CreateTranskemsTable extends Migration
     {
         Schema::create('transkems', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_pinjam');
-            $table->integer('id_petugas');
-            $table->integer('id_buku');
+            $table->integer('id_pinjam')->unsigned();
+            $table->integer('id_petugas')->unsigned();
+            $table->integer('id_buku')->unsigned();
             $table->date('tanggal_pengembalian');
             $table->integer('denda');
             $table->timestamps();
+
+            $table->foreign('id_pinjam')->references('id')->on('transpims')->onDelete('cascade');
+            $table->foreign('id_petugas')->references('id')->on('petugas')->onDelete('cascade');
+            $table->foreign('id_buku')->references('id')->on('bukus')->onDelete('cascade');
         });
+
     }
 
     /**

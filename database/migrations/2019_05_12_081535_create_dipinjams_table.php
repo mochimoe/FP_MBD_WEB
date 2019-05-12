@@ -14,9 +14,12 @@ class CreateDipinjamsTable extends Migration
     public function up()
     {
         Schema::create('dipinjams', function (Blueprint $table) {
-            $table->integer('id_pinjam');
-            $table->integer('id_buku');
+            $table->integer('id_pinjam')->unsigned();
+            $table->integer('id_buku')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_pinjam')->references('id')->on('transpims')->onDelete('cascade');
+            $table->foreign('id_buku')->references('id')->on('bukus')->onDelete('cascade');
         });
     }
 

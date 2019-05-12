@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMempunyaisTable extends Migration
+class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateMempunyaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('mempunyais', function (Blueprint $table) {
-            $table->integer('id_buku');
-            $table->integer('id_katagori');
+        Schema::create('tests', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateMempunyaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mempunyais');
+        Schema::dropIfExists('tests');
     }
 }
