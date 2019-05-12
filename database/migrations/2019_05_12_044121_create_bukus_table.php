@@ -14,13 +14,17 @@ class CreateBukusTable extends Migration
     public function up()
     {
         Schema::create('bukus', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->nullable();
             $table->integer('id_pengarang');
             $table->integer('id_rak');
             $table->integer('id_penerbit');
             $table->string('Judul');
             $table->date('tanggal_terbit');
             $table->timestamps();
+
+            $table->foreign('id_pengarang')->references('id')->on('pengarangs')->onDelete('cascade');
+            $table->foreign('id_rak')->references('id')->on('raks')->onDelete('cascade');
+            $table->foreign('id_penerbit')->references('id')->on('penerbits')->onDelete('cascade');
         });
     }
 
