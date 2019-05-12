@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Data Anggota
+@endsection
+
 @section('content')
 
 <div class="uper">
