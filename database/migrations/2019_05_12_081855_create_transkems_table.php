@@ -23,7 +23,7 @@ class CreateTranskemsTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_pinjam')->references('id')->on('transpims')->onDelete('cascade');
-            $table->foreign('id_petugas')->references('id')->on('petugas')->onDelete('cascade');
+            $table->foreign('id_petugas')->references('id')->on('petugass')->onDelete('cascade');
             $table->foreign('id_buku')->references('id')->on('bukus')->onDelete('cascade');
         });
 

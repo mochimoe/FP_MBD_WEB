@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TranspimController extends Controller
+class TranspimsController extends Controller
 {
     /**
      * Display a listing of the resource.

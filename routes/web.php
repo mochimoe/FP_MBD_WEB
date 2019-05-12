@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('anggotas','AnggotasController');
+Route::resource('bukus','Controller');
+Route::resource('dipinjams','BukusController');
+Route::resource('kategoris','KategorisController');
+Route::resource('mempunyais','MempunyaisController');
+Route::resource('penerbits','PenerbitsController');
+Route::resource('pengarangs','PengarangsController');
+Route::resource('petugass','PetugassController');
+Route::resource('raks','RaksController');
+Route::resource('transkems','TranskemsController');
+Route::resource('transpims','TranspimsController');

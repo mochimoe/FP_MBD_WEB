@@ -13,7 +13,7 @@ class CreatePetugasTable extends Migration
      */
     public function up()
     {
-        Schema::create('petugas', function (Blueprint $table) {
+        Schema::create('petugass', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->string('alamat');
