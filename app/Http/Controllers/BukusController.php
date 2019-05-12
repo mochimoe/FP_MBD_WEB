@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Buku;
 
 class BukusController extends Controller
 {
@@ -13,7 +14,9 @@ class BukusController extends Controller
      */
     public function index()
     {
-        //
+        $bukus = Buku::all();
+
+        return view('bukus.index', compact('bukus'));
     }
 
     /**
@@ -23,7 +26,7 @@ class BukusController extends Controller
      */
     public function create()
     {
-        //
+        return view('bukus.create');
     }
 
     /**
@@ -34,7 +37,17 @@ class BukusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pengarang' => 'required|max:200',
+            'id_rak' => 'required|max:100',
+            'id_penerbit' => 'required|max:200',
+            'judul' => 'required|max:100',
+            'tanggal_terbit' => 'required',
+            'stok' => 'required'
+        ]);
+        $buku = Buku::create($validatedData);
+   
+        return redirect('/bukus')->with('success', 'New Data is successfully saved');
     }
 
     /**

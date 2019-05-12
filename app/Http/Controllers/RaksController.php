@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Rak;
 class RaksController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class RaksController extends Controller
      */
     public function index()
     {
-        //
+        $raks = Rak::all();
+
+        return view('raks.index', compact('raks'));
     }
 
     /**
@@ -23,7 +25,7 @@ class RaksController extends Controller
      */
     public function create()
     {
-        //
+        return view('raks.create');
     }
 
     /**
@@ -34,7 +36,12 @@ class RaksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kapasitas_rak' => 'required'
+        ]);
+        $rak = Rak::create($validatedData);
+   
+        return redirect('/raks')->with('success', 'New Rak is successfully saved');
     }
 
     /**
