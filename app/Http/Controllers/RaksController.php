@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rak;
+
 
 class RaksController extends Controller
 {
@@ -12,8 +14,10 @@ class RaksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    
     {
-        //
+        $raks = Rak::all();
+        return view('raks.index')->with('raks', $raks);
     }
 
     /**
@@ -23,7 +27,7 @@ class RaksController extends Controller
      */
     public function create()
     {
-        //
+        return view('raks.create');
     }
 
     /**
@@ -34,7 +38,13 @@ class RaksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kapasitas_rak' => 'required'
+        ]);
+
+        $raks = Rak::create($validatedData);
+   
+        return redirect('/raks/create')->with('success', 'Stok telah ditambahkan');
     }
 
     /**
@@ -79,6 +89,9 @@ class RaksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rak = Rak::find($id);
+
+        $rak->delete();
+        return redirect('/raks')->with('success','Data Dihapus');
     }
 }

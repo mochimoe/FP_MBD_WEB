@@ -99,6 +99,6 @@ class AnggotasController extends Controller
         $anggota = Anggota::find($id);
 
         $anggota->delete();
-        return redirect('/anggotas')->with('success','Data Dihapus');
+        return redirect('/anggotas')->with('delete','Data Dihapus');
     }
 }
