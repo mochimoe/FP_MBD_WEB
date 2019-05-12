@@ -14,8 +14,7 @@ class CreateAnggotasTable extends Migration
     public function up()
     {
         Schema::create('anggotas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('id_anggota');
+            $table->increments('id');
             $table->string('nama_anggota');
             $table->date('tgl_lahir');
             $table->date('tgl_daftar');
