@@ -15,11 +15,13 @@ class CreateMempunyaisTable extends Migration
     {
         Schema::create('mempunyais', function (Blueprint $table) {
             $table->integer('id_buku')->unsigned();
-            $table->integer('id_katagori')->unsigned();
+            $table->integer('id_kategori')->unsigned();
             $table->timestamps();
 
+            $table->primary(['id_buku', 'id_kategori']); 
+            
             $table->foreign('id_buku')->references('id')->on('bukus')->onDelete('cascade');
-            $table->foreign('id_katagori')->references('id')->on('kategoris')->onDelete('cascade');
+            $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade');
         });
     }
 

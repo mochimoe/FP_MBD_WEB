@@ -18,6 +18,8 @@ class CreateDipinjamsTable extends Migration
             $table->integer('id_buku')->unsigned();
             $table->timestamps();
 
+            $table->primary(['id_pinjam', 'id_buku']);
+
             $table->foreign('id_pinjam')->references('id')->on('transpims')->onDelete('cascade');
             $table->foreign('id_buku')->references('id')->on('bukus')->onDelete('cascade');
         });
