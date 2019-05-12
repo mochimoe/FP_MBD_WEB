@@ -1,16 +1,15 @@
 <!-- create.blade.php -->
 
 @extends('layouts.app')
+@section('title')
+    Library - Tambah Anggota
+@endsection
 
 @section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
+
 <div class="card uper">
   <div class="card-header">
-    Add Book
+    JANCOK
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -25,18 +24,30 @@
       <form method="post" action="{{ route('anggotas.store') }}">
           <div class="form-group">
               @csrf
-              <label for="name">Book Name:</label>
-              <input type="text" class="form-control" name="book_name"/>
+              <label for="name">Nama Anggota:</label>
+              <input type="text" class="form-control" name="nama_anggota"/>
           </div>
           <div class="form-group">
-              <label for="price">Book ISBN Number :</label>
-              <input type="text" class="form-control" name="isbn_no"/>
+              <label for="price">Tanggal Lahir :</label>
+              <input type="text" class="form-control" name="tgl_lhr"/>
           </div>
           <div class="form-group">
-              <label for="quantity">Book Price :</label>
-              <input type="text" class="form-control" name="book_price"/>
+              <label for="quantity">Tanggal Daftar :</label>
+              <input type="text" class="form-control" name="tgl_dftr"/>
           </div>
-          <button type="submit" class="btn btn-primary">Create Book</button>
+          <div class="form-group">
+              <label for="quantity">Jenis Kelamin :</label>
+              <input type="text" class="form-control" name="kelamin"/>
+          </div>
+          <div class="form-group">
+              <label for="quantity">Alamat :</label>
+              <input type="text" class="form-control" name="alamat"/>
+          </div>
+          <div class="form-group">
+              <label for="quantity">No. HP :</label>
+              <input type="text" class="form-control" name="no_hp"/>
+          </div>
+          <button type="submit" class="btn btn-primary">Tambahkan Anggota</button>
       </form>
   </div>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Anggota;
 
 class AnggotasController extends Controller
 {
@@ -13,8 +14,8 @@ class AnggotasController extends Controller
      */
     public function index()
     {
-
-        return view('anggotas.index');
+        $anggotas = Anggota::all();
+        return view('anggotas.index')->with('anggotas', $anggotas);
     }
 
     /**
@@ -24,7 +25,7 @@ class AnggotasController extends Controller
      */
     public function create()
     {
-        //
+        return view('anggotas.create');
     }
 
     /**
@@ -35,7 +36,16 @@ class AnggotasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama_anggota' => 'required',
+            'tgl_lhr' => 'required',
+            'tgl_dftr' => 'required',
+            'kelamin' => 'required',
+            'no_hp' => 'required'
+        ]);
+       
+   
+        return redirect('/anggotas')->with('success', 'Anggota baru ditambahkan');
     }
 
     /**
