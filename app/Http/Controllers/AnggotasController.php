@@ -59,7 +59,10 @@ class AnggotasController extends Controller
      */
     public function show($id)
     {
-        //
+        $anggota = Anggota::find($id);
+
+        $anggota->delete();
+        return redirect('/anggotas')->with('success','Data Dihapus');
     }
 
     /**
@@ -93,6 +96,9 @@ class AnggotasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anggota = Anggota::find($id);
+
+        $anggota->delete();
+        return redirect('/anggotas')->with('success','Data Dihapus');
     }
 }

@@ -9,7 +9,7 @@
 
 <div class="card uper">
   <div class="card-header">
-    JANCOK
+    Tambahkan Anggota
   </div>
   <div class="card-body">
     @if ($errors->any())
