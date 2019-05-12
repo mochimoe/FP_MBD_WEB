@@ -49,15 +49,26 @@
                         <ul class="nav-menu">
                                 <li class=""><a href="/">Home</a></li>
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="courses.html">Input</a></li>
+                                <li class="menu-has-children"><a href="">Input</a>
+                                    <ul>
+                                            <li><a href="/anggotas/create">Anggota</a></li>
+                                            <li><a href="/bukus/create">Buku</a></li>
+                                            <li><a href="/petugass/create">Petugas</a></li>
+                                            <li><a href="/kategoris/create">Kategori</a></li>
+            
+                                            <li><a href="/penerbits/create">Penerbit</a></li>
+    
+    
+                                    </ul>
+                                </li>
                                 <li class="menu-has-children"><a href="">Pages</a>
                                     <ul>
-                                        <li><a href="elements.html">Elements</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
+                                        <li><a href="/anggotas">Anggota</a></li>
+                                        <li><a href="/bukus">Buku</a></li>
+                                        <li><a href="/petugass">Petugas</a></li>
+                                        <li><a href="/kategoris">Kategori</a></li>
         
-                                        <li><a href="elements.html">Elements</a></li>
+                                        <li><a href="/penerbits">Penerbit</a></li>
                                     </ul>
                                 </li>
                             @guest
