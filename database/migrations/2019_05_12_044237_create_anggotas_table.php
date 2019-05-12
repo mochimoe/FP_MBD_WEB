@@ -21,6 +21,7 @@ class CreateAnggotasTable extends Migration
             $table->string('kelamin');
             $table->string('alamat');
             $table->string('no_hp');
+            $table->string('status');
             $table->timestamps();
         });
     }

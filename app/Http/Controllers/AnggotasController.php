@@ -36,7 +36,7 @@ class AnggotasController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validatedData = $request->validate([
             'nama_anggota' => 'required',
             'tgl_lhr' => 'required',
             'tgl_dftr' => 'required',
