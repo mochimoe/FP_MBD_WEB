@@ -41,8 +41,10 @@ class AnggotasController extends Controller
             'tgl_lahir' => 'required',
             'tgl_daftar' => 'required',
             'kelamin' => 'required',
+            'alamat'=>'required',
             'no_hp' => 'required'
         ]);
+
         $anggotas = Anggota::create($validatedData);
        
    

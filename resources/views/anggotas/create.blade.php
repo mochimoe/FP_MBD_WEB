@@ -29,11 +29,11 @@
           </div>
           <div class="form-group">
               <label for="price">Tanggal Lahir :</label>
-              <input type="text" class="form-control" name="tgl_lhr"/>
+              <input type="text" class="form-control" name="tgl_lahir"/>
           </div>
           <div class="form-group">
               <label for="quantity">Tanggal Daftar :</label>
-              <input type="text" class="form-control" name="tgl_dftr"/>
+              <input type="text" class="form-control" name="tgl_daftar"/>
           </div>
           <div class="form-group">
               <label for="quantity">Jenis Kelamin :</label>
