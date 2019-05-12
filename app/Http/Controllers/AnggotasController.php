@@ -43,6 +43,7 @@ class AnggotasController extends Controller
             'kelamin' => 'required',
             'no_hp' => 'required'
         ]);
+        $anggotas = Anggota::create($validatedData);
        
    
         return redirect('/anggotas')->with('success', 'Anggota baru ditambahkan');
