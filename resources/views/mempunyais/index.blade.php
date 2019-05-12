@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 <style>
@@ -16,18 +16,20 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Kapasitas Rak</td>
-          <td></td>
+          <td>ID Buku</td>
+          <td>ID Kategori</td>
+          <td colspan="2">Action</td>
         </tr>
     </thead>
     <tbody>
-        @foreach($raks as $rak)
+        @foreach($mempunyais as $mem)
         <tr>
-            <td>{{$rak->id}}</td>
-            <td>{{$rak->kapasitas_rak}}</td>
-            <td></td>
+            <td>{{$mem->id}}</td>
+            <td>{{$mem->id_buku}}</td>
+            <td>{{$mem->id_katagori}}</td>
+            <td><a href="{{ route('mempunyais.edit',$mem->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('raks.destroy', $rak->id)}}" method="post">
+                <form action="{{ route('mempunyais.destroy', $mem->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

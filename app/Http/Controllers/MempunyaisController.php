@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mempunyai;
 
 class MempunyaisController extends Controller
 {
@@ -13,7 +14,8 @@ class MempunyaisController extends Controller
      */
     public function index()
     {
-        //
+        $mempunyais = Mempunyai::all();
+        return view('mempunyais.index')->with('mempunyais', $mempunyais);
     }
 
     /**
@@ -23,7 +25,7 @@ class MempunyaisController extends Controller
      */
     public function create()
     {
-        //
+       return view('mempunyais.create');
     }
 
     /**
@@ -34,7 +36,13 @@ class MempunyaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_buku' => 'required|max:10',
+            'id_katagori' => 'required|max:10'
+        ]);
+        $mempunyais = Mempunyai::create($validatedData);
+   
+        return redirect('/mempunyais')->with('success', 'Data buku telah ditambahkan');
     }
 
     /**

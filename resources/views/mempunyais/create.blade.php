@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 <style>
@@ -10,7 +10,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Tambahkan Rak
+    Tambahkan Kategori Buku
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,13 +22,15 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('raks.store') }}">
+      <form method="post" action="{{ route('mempunyais.store') }}">
           <div class="form-group">
               @csrf
-              <label for="kapasitas_rak">Kapasitas Rak:</label>
-              <input type="text" class="form-control" name="kapasitas_rak"/>
+              <label for="nama_pengarang">ID Buku :</label>
+              <input type="text" class="form-control" name="id_buku"/>
+              <label for="nama_pengarang">ID Kategori:</label>
+              <input type="text" class="form-control" name="id_katagori"/>
           </div>
-          <button type="submit" class="btn btn-primary">Buat Rak</button>
+          <button type="submit" class="btn btn-primary">Tambahkan Kategori</button>
       </form>
   </div>
 </div>
