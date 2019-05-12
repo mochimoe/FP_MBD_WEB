@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Dipinjam;
 
 class DipinjamsController extends Controller
 {
@@ -13,7 +14,9 @@ class DipinjamsController extends Controller
      */
     public function index()
     {
-        //
+        $dipinjams = Dipinjam::all();
+
+        return view('dipinjams.index', compact('dipinjams'));
     }
 
     /**
@@ -23,7 +26,7 @@ class DipinjamsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dipinjams.create');
     }
 
     /**
@@ -34,7 +37,13 @@ class DipinjamsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pinjam' => 'required|max:10',
+            'id_buku' => 'required|max:10'
+        ]);
+        $dipinjam = Dipinjam::create($validatedData);
+   
+        return redirect('/dipinjams')->with('success', 'New Data is successfully saved');
     }
 
     /**
@@ -56,7 +65,9 @@ class DipinjamsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dipinjam = Dipinjam::find($id);
+
+        return view('dipinjams.edit')->with('dipinjam',$dipinjam);
     }
 
     /**
@@ -68,7 +79,12 @@ class DipinjamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pinjam' => 'required|max:10',
+            'id_buku' => 'required|max:10'
+        ]);
+        $dipinjam = Dipinjam::update($validatedData);
+        return redirect('/dipinjams')->with('success', 'Data is successfully updates');
     }
 
     /**
@@ -79,6 +95,9 @@ class DipinjamsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dipinjam = Dipinjam::find($id);
+
+        $dipinjam->delete();
+        return redirect('/dipinjams')->with('success','Data removed');
     }
 }

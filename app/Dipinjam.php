@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dipinjam extends Model
 {
-    //
+    public $primaryKey = 'id';
+    public $timestamps = true;
+    protected $fillable = ['id_pinjam','id_buku'];
 }

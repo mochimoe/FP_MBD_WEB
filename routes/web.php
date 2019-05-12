@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::resource('anggotas','AnggotasController');
 Route::resource('bukus','Controller');
-Route::resource('dipinjams','BukusController');
+Route::resource('dipinjams','DipinjamsController');
 Route::resource('kategoris','KategorisController');
 Route::resource('mempunyais','MempunyaisController');
 Route::resource('penerbits','PenerbitsController');
