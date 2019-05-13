@@ -52,10 +52,13 @@
                                     <ul>
                                             <li><a href="/anggotas/create">Anggota</a></li>
                                             <li><a href="/bukus/create">Buku</a></li>
+                                            <li><a href="/dipinjams/create">Buku Dipinjam</a></li>
                                             <li><a href="/petugass/create">Petugas</a></li>
                                             <li><a href="/kategoris/create">Kategori</a></li>
-            
+
                                             <li><a href="/penerbits/create">Penerbit</a></li>
+                                            <li><a href="/transpims/create">Transaksi Peminjaman</a></li>
+                                            <li><a href="/transkems/create">Transaksi Pengembalian</a></li>
     
     
                                     </ul>
@@ -64,10 +67,13 @@
                                     <ul>
                                         <li><a href="/anggotas">Anggota</a></li>
                                         <li><a href="/bukus">Buku</a></li>
+                                        <li><a href="/dipinjams">Buku Dipinjam</a></li>
                                         <li><a href="/petugass">Petugas</a></li>
                                         <li><a href="/kategoris">Kategori</a></li>
         
                                         <li><a href="/penerbits">Penerbit</a></li>
+                                        <li><a href="/transpims">Transaksi Peminjaman</a></li>
+                                        <li><a href="/transkems">Transaksi Pengembalian</a></li>
                                     </ul>
                                 </li>
                             @guest

@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 <style>
