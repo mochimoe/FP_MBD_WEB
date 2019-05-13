@@ -19,7 +19,7 @@ class CreateTranskemsTable extends Migration
             $table->integer('id_petugas')->unsigned();
             $table->integer('id_buku')->unsigned();
             $table->date('tanggal_pengembalian');
-            $table->integer('denda');
+            $table->integer('denda')->default(0);
             $table->timestamps();
 
             $table->foreign('id_pinjam')->references('id')->on('transpims')->onDelete('cascade');
