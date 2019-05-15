@@ -31,11 +31,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 #Routing Bintang
-Route::get('/bintangs/view1', 'BintangsController@view1')->name('view1bintang');
-Route::get('/bintangs/view2', 'BintangsController@view2')->name('view2bintang');
-Route::get('/bintangs/function1', 'BintangsController@function1')->name('function1bintang');
-Route::get('/bintangs/function2', 'BintangsController@function2')->name('function2bintang');
-Route::get('/bintangs/procedure1', 'BintangsController@procedure1')->name('procedure1bintang');
-Route::get('/bintangs/procedure2', 'BintangsController@procedure2')->name('procedure2bintang');
-Route::get('/bintangs/join1', 'BintangsController@join1')->name('join1bintang');
-Route::get('/bintangs/join2', 'BintangsController@join2')->name('join2bintang');
+Route::get('/bintangs/view1', 'BintangsController@view1')->name('bintangs.view1');
+Route::get('/bintangs/view2', 'BintangsController@view2')->name('bintangs.view2');
+Route::get('/bintangs/function1', 'BintangsController@function1')->name('bintangs.function1');
+Route::get('/bintangs/function2', 'BintangsController@function2')->name('bintangs.function2');
+Route::get('/bintangs/procedure1input', 'BintangsController@procedure1input')->name('bintangs.procedure1input');
+Route::post('/bintangs/procedure1output', 'BintangsController@procedure1output')->name('bintangs.procedure1output');
+Route::get('/bintangs/procedure2', 'BintangsController@procedure2')->name('bintangs.procedure2');
+Route::get('/bintangs/join1', 'BintangsController@join1')->name('bintangs.join1');
+Route::get('/bintangs/join2', 'BintangsController@join2')->name('bintangs.join2');

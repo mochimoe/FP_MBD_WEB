@@ -45,9 +45,14 @@ class BintangsController extends Controller
         //return view('bintangs.view1', ['views' => $views]);
     }
 
-    public function procedure1()
+    public function procedure1input()
     {
-        $procs = DB::select('call hitungdenda(3)');
+        return view('bintangs.procedure1input');
+    }
+
+    public function procedure1output(Request $request)
+    {
+        $procs = DB::select('call hitungdenda(:param1)',['param1'=>$request->id_pengembalian]);
         
         $transkems = Transkem::all();
         return view('transkems.index', compact('transkems'));
