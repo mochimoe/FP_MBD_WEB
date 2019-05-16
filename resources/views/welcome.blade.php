@@ -15,7 +15,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Educature Education</title>
+	<title>Baca Buku</title>
 
 	<!--
 			Google Font
@@ -43,13 +43,13 @@
 	<header id="header">
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
-				<div id="logo">
-					<a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				<div>
+					<a href="/" ><h4 style="color:white">BACA BUKU</h4></a>
 				</div>
 				<nav id="nav-menu-container">
 						{{-- @if (Route::has('login')) --}}
 					<ul class="nav-menu">
-                            <li class="menu-active"><a href="/">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="about.html">About</a></li>
 							<li><a href="courses.html">Input</a>
 								<ul>
@@ -107,10 +107,9 @@
 		<div class="container">
 			<div class="row fullscreen d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-8 col-md-12">
-					<h1 class="wow fadeIn" data-wow-duration="4s">We Rank the Best Courses <br> on the Web</h1>
+					<h1 class="wow fadeIn" data-wow-duration="4s">Kami Menyediakan Buku<br> Terbaik dan Berkualitas</h1>
 					<p class="text-white">
-						In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space
-						telescope.
+						“Semakin banyak kamu membaca, semakin banyak hal yang akan kamu ketahui. Semakin kamu belajar, semakin banyak tempat yang akan kamu datangi.” <small>— Dr. Seuss.</small>
 					</p>
 
 				</div>
@@ -132,17 +131,15 @@
 				</div>
 				<div class="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
 					<h1>
-						Over 2500 Courses <br> from 5 Platform
+						Sepatah Kata <br> Dari Kami
 					</h1>
 					<div class="wow fadeIn" data-wow-duration="1s">
 						<p>
-							There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s exciting to think
-							about setting up your own viewing station. In the life of any aspiring astronomer that it is time to buy that first
-							telescope. It’s exciting to think about setting up your own viewing station.
+							Website ini dibuat dalam rangka menyelesaikan Final Project dari mata kuliah
+							Manajemen Basis Data, kami mengambil topik final project yaitu sistem peminjaman buku
+							online. Website ini dikembangkan olehh 3 mahasiswa Institut Teknologi Nopember Departement Informatika
+							yaitu: Bintang Nuralamsyah , Tria Nur Aisyah dan Shania. Diharapkan kami mendapatkan nilai maksimal pada akhirnya nanti.
 						</p>
-					</div>
-					<a href="courses.html" class="primary-btn">Explore Courses</a>
-				</div>
 			</div>
 		</div>
 	</section>
