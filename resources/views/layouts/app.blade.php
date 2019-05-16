@@ -42,8 +42,8 @@
 	<header id="header" class="bg-dark">
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
-                    <div id="logo">
-                        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                    <div>
+                        <a href="/" ><h4 style="color:white">BACA BUKU</h4></a>
                     </div>
                     <nav id="nav-menu-container">
                             {{-- @if (Route::has('login')) --}}
@@ -54,9 +54,9 @@
                                             <li><a href="/anggotas/create">Anggota</a></li>
                                             <li><a href="/bukus/create">Buku</a></li>
                                             <li><a href="/dipinjams/create">Buku Dipinjam</a></li>
-                                            <li><a href="/petugass/create">Petugas</a></li>
+                                            <li><a href="/mempunyais/create">Mempunyai</a></li>
                                             <li><a href="/kategoris/create">Kategori</a></li>
-
+                                            <li><a href="/petugass/create">Petugas</a></li>
                                             <li><a href="/penerbits/create">Penerbit</a></li>
                                             <li><a href="/transpims/create">Transaksi Peminjaman</a></li>
                                             <li><a href="/transkems/create">Transaksi Pengembalian</a></li>

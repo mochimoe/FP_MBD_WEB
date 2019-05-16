@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Library - Tambah Anggota
+    Baca Buku - Tambah Anggota
 @endsection
 
 @section('css')
