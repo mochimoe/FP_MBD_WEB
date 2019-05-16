@@ -52,6 +52,7 @@ Route::get('/aiss/join1', 'AissController@join1')->name('aiss.join1');
 Route::get('/aiss/join2', 'AissController@join2')->name('aiss.join2');
 
 #Routing Shania
+Route::resource('shanias','ShaniasController');
 Route::get('/shanias/view1', 'ShaniasController@view1')->name('shanias.view1');
 Route::get('/shanias/view2', 'ShaniasController@view2')->name('shanias.view2');
 Route::get('/shanias/function1', 'ShaniasController@function1')->name('shanias.function1');
