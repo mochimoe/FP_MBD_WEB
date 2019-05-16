@@ -27,16 +27,17 @@
 	<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
 	<link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/formcss/style.css')}}"> --}}
     
     @yield('css')
 
     <style>
         .py3{
-            padding-top: 10%;
+            padding-top: 5%;
         }
         </style>
 </head>
-<body>
+<body @yield('bodycss')>
     <!-- Start Header Area -->
 	<header id="header" class="bg-dark">
             <div class="container">
@@ -104,7 +105,7 @@
         </header>
         <!-- End Header Area -->
 
-        <section class="container py3">
+        <section>
             @yield('content')
         </section>
     </div>
