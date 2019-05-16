@@ -54,10 +54,12 @@
                                             <li><a href="/anggotas/create">Anggota</a></li>
                                             <li><a href="/bukus/create">Buku</a></li>
                                             <li><a href="/dipinjams/create">Buku Dipinjam</a></li>
-                                            <li><a href="/mempunyais/create">Mempunyai</a></li>
                                             <li><a href="/kategoris/create">Kategori</a></li>
-                                            <li><a href="/petugass/create">Petugas</a></li>
+                                            <li><a href="/mempunyais/create">Mempunyai</a></li>
                                             <li><a href="/penerbits/create">Penerbit</a></li>
+                                            <li><a href="/pengarangs/create">Pengarang</a></li>
+                                            <li><a href="/petugass/create">Petugas</a></li>
+                                            <li><a href="/raks/create">Rak</a></li>
                                             <li><a href="/transpims/create">Transaksi Peminjaman</a></li>
                                             <li><a href="/transkems/create">Transaksi Pengembalian</a></li>
     
@@ -66,15 +68,17 @@
                                 </li>
                                 <li class="menu-has-children"><a href="">Pages</a>
                                     <ul>
-                                        <li><a href="/anggotas">Anggota</a></li>
-                                        <li><a href="/bukus">Buku</a></li>
-                                        <li><a href="/dipinjams">Buku Dipinjam</a></li>
-                                        <li><a href="/petugass">Petugas</a></li>
-                                        <li><a href="/kategoris">Kategori</a></li>
-        
-                                        <li><a href="/penerbits">Penerbit</a></li>
-                                        <li><a href="/transpims">Transaksi Peminjaman</a></li>
-                                        <li><a href="/transkems">Transaksi Pengembalian</a></li>
+                                            <li><a href="/anggotas">Anggota</a></li>
+                                            <li><a href="/bukus">Buku</a></li>
+                                            <li><a href="/dipinjams">Buku Dipinjam</a></li>
+                                            <li><a href="/kategoris">Kategori</a></li>
+                                            <li><a href="/mempunyais">Mempunyai</a></li>
+                                            <li><a href="/penerbits">Penerbit</a></li>
+                                            <li><a href="/pengarangs">Pengarang</a></li>
+                                            <li><a href="/petugass">Petugas</a></li>
+                                            <li><a href="/raks">Rak</a></li>
+                                            <li><a href="/transpims">Transaksi Peminjaman</a></li>
+                                            <li><a href="/transkems">Transaksi Pengembalian</a></li>
                                     </ul>
                                 </li>
                             @guest
