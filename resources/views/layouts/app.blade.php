@@ -81,6 +81,49 @@
                                             <li><a href="/transkems">Transaksi Pengembalian</a></li>
                                     </ul>
                                 </li>
+                                <li class="menu-has-children"><a href="">Query</a>
+                                    <ul>
+                                        <li class="menu-has-children"><a href="">Bintang</a>
+                                            <ul>
+                                                <li><a href="/bintangs/view1"></a>View 1</li>
+                                                <li><a href="/bintangs/view2"></a>View 2</li>
+                                                <li><a href="/bintangs/function1"></a>Function 1</li>
+                                                <li><a href="/bintangs/function2"></a>Function 2</li>
+                                                <li><a href="/bintangs/procedure1input"></a>Procedure 1 in</li>
+                                                <li><a href="/bintangs/procedure2"></a>Procedure 2</li>
+                                                <li><a href="/bintangs/join1"></a>Join 1</li>
+                                                <li><a href="/bintangs/join2"></a>Join 2</li>
+                                            </ul>
+
+                                        </li>
+                                        <li class="menu-has-children"><a href="">Tria</a>
+                                            <ul>
+                                                <li><a href="/aiss/view1"></a>View 1</li>
+                                                <li><a href="/aiss/view2"></a>View 2</li>
+                                                <li><a href="/aiss/function1"></a>Function 1</li>
+                                                <li><a href="/aiss/function2"></a>Function 2</li>
+                                                <li><a href="/aiss/procedure1input"></a>Procedure 1</li>
+                                                <li><a href="/aiss/procedure2input"></a>Procedure 2 in</li>
+                                                <li><a href="/aiss/join1"></a>Join 1</li>
+                                                <li><a href="/aiss/join2"></a>Join 2</li>
+                                            </ul>
+
+                                        </li>
+                                        <li class="menu-has-children"><a href="">Shania</a>
+                                            <ul>
+                                                <li><a href=""></a>View 1</li>
+                                                <li><a href=""></a>View 2</li>
+                                                <li><a href=""></a>Function 1</li>
+                                                <li><a href=""></a>Function 2</li>
+                                                <li><a href=""></a>Procedure 1</li>
+                                                <li><a href=""></a>Procedure 2 in</li>
+                                                <li><a href=""></a>Join 1</li>
+                                                <li><a href=""></a>Join 2</li>
+                                            </ul>
+
+                                        </li>
+                                    </ul>
+                                </li>
                             @guest
                             
                             <li><a href="{{ route('login') }}">Login</a></li>
