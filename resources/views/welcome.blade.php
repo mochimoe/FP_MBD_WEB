@@ -87,36 +87,36 @@
 								<ul>
 									<li class="menu-has-children"><a href="">Bintang</a>
 										<ul>
-											<li><a href="/bintangs/view1"></a>View 1</li>
-											<li><a href="/bintangs/view2"></a>View 2</li>
-											<li><a href="/bintangs/function1"></a>Function 1</li>
-											<li><a href="/bintangs/function2"></a>Function 2</li>
-											<li><a href="/bintangs/procedure1input"></a>Procedure 1 in</li>
-											<li><a href="/bintangs/procedure2"></a>Procedure 2</li>
-											<li><a href="/bintangs/join1"></a>Join 1</li>
-											<li><a href="/bintangs/join2"></a>Join 2</li>
+											<li><a href="/bintangs/view1">View 1</a></li>
+											<li><a href="/bintangs/view2">View 2</a></li>
+											<li><a href="/bintangs/function1">Function 1</a></li>
+											<li><a href="/bintangs/function2">Function 2</a></li>
+											<li><a href="/bintangs/procedure1input">Procedure 1 in</a></li>
+											<li><a href="/bintangs/procedure2">Procedure 2</a></li>
+											<li><a href="/bintangs/join1">Join 1</a></li>
+											<li><a href="/bintangs/join2">Join 2</a></li>
 										</ul>
 
 									</li>
 									<li class="menu-has-children"><a href="">Tria</a>
 										<ul>
-											<li><a href="/aiss/view1"></a>View 1</li>
-											<li><a href="/aiss/view2"></a>View 2</li>
-											<li><a href="/aiss/function1"></a>Function 1</li>
-											<li><a href="/aiss/function2"></a>Function 2</li>
-											<li><a href="/aiss/procedure1input"></a>Procedure 1</li>
-											<li><a href="/aiss/procedure2input"></a>Procedure 2 in</li>
-											<li><a href="/aiss/join1"></a>Join 1</li>
-											<li><a href="/aiss/join2"></a>Join 2</li>
+											<li><a href="/aiss/view1">View 1</a></li>
+											<li><a href="/aiss/view2">View 2</a></li>
+											<li><a href="/aiss/function1">Function 1</a></li>
+											<li><a href="/aiss/function2">Function 2</a></li>
+											<li><a href="/aiss/procedure1input">Procedure 1</a></li>
+											<li><a href="/aiss/procedure2input">Procedure 2 in</a></li>
+											<li><a href="/aiss/join1">Join 1</a></li>
+											<li><a href="/aiss/join2">Join 2</a></li>
 										</ul>
 
 									</li>
 									<li class="menu-has-children"><a href="">Shania</a>
 										<ul>
-											<li><a href=""></a>View 1</li>
-											<li><a href=""></a>View 2</li>
-											<li><a href=""></a>Function 1</li>
-											<li><a href=""></a>Function 2</li>
+											<li><a href="">View 1</a></li>
+											<li><a href="">View 2</a></li>
+											<li><a href="">Function 1</a></li>
+											<li><a href="">Function 2</a></li>
 											<li><a href=""></a>Procedure 1</li>
 											<li><a href=""></a>Procedure 2 in</li>
 											<li><a href=""></a>Join 1</li>
