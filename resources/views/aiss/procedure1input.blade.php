@@ -1,11 +1,12 @@
-<!-- create.blade.php -->
-
 @extends('layouts.app')
+@section('title')
+    Tria - Procedure 1
+@endsection
 
 @section('content')
 <style>
   .uper {
-    margin-top: 40px;
+    padding-top: 10%;
   }
 </style>
 <div class="card uper">
