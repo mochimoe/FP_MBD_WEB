@@ -12,6 +12,14 @@
   }
 </style>
 <div class=container>
+    <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">View 1</h4>
+            <p> Menampilkan judul buku dan nama pengarang</p>
+          </div>
+        </div>
+      </div>
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
