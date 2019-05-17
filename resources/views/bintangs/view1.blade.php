@@ -1,11 +1,17 @@
-@extends('layout')
+@extends('layouts.app')
+
+@section('title')
+  Bintang - view 1
+@endsection
 
 @section('content')
+
 <style>
   .uper {
-    margin-top: 40px;
+    padding-top: 10%;
   }
 </style>
+<div class=container>
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
@@ -31,4 +37,6 @@
     </tbody>
   </table>
 <div>
+</div>
+
 @endsection

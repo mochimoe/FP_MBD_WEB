@@ -27,7 +27,7 @@ class ShaniasController extends Controller
                                 FROM petugass p LEFT JOIN transpims t
                                 ON p.id = t.id_petugas;');
         $trigger1s = \DB::table('log_terlambat')->get();
-        $trigger2s = \DB::table('lograk')->get();
+        $trigger2s = \DB::table('log_rak')->get();
             
         return view('shanias.index', compact('view1s','view2s','join1s','join2s','trigger1s','trigger2s', 'func1', 'func2'));   
     }

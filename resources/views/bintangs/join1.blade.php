@@ -1,4 +1,8 @@
-@extends('layout')
+@extends('layouts.app')
+
+section('title')
+  Bintang - Join 1
+@section('content')
 
 @section('content')
 <style>

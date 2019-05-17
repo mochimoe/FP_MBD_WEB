@@ -2,6 +2,10 @@
 
 @extends('layouts.app')
 
+section('title')
+  Bintang - Procedure 1
+@section('content')
+
 @section('content')
 <style>
   .uper {

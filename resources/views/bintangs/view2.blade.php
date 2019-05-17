@@ -1,9 +1,13 @@
-@extends('layout')
+@extends('layouts.app')
+
+@section('title')
+  Bintang - view 2
+@section('content')
 
 @section('content')
 <style>
   .uper {
-    margin-top: 40px;
+    padding-top: 10%;
   }
 </style>
 <div class="uper">
