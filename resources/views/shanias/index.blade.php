@@ -317,11 +317,11 @@
                             <option value="30">30</option>
                           </select>
                       </div>
+                      <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
                 </form>
                   <div class="container">
-                    <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
-                      @if(!empty(request()->all()))
-                          {{ request()->name }}
+                      @if(!empty($func1))
+                          Ketersediaan: {{ $func1 }}
                       @endif
                   </div>
               </div>
@@ -331,7 +331,7 @@
                       <div class="form-group">
                           @csrf
                           <h6 class="card-title text-left">Kategori :</h6>
-                            <select class="form-control">
+                            <select class="form-control" name="katagori_buku">
                                 <option value="novel">Novel</option>
                                 <option value="cerpen">Cerpen</option>
                                 <option value="Sci-fi">Sci-fi</option>
@@ -364,11 +364,11 @@
                                 <option value="Karya Ilmiah">Karya Ilmiah</option>
                             </select>
                       </div>
+                      <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
                   </form>
                     <div class="container">
-                        <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
-                        @if(!empty(request()->all()))
-                          {{ request()->id_rak }}
+                        @if(!empty($func2))
+                          Jumlah buku: {{ $func2 }}
                         @endif
                       </div>
                 </div>
