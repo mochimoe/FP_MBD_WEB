@@ -47,8 +47,10 @@ Route::get('/aiss/view1', 'AissController@view1')->name('aiss.view1');
 Route::get('/aiss/view2', 'AissController@view2')->name('aiss.view2');
 Route::get('/aiss/function1', 'AissController@function1')->name('aiss.function1');
 Route::get('/aiss/function2', 'AissController@function2')->name('aiss.function2');
-Route::get('/aiss/procedure1', 'AissController@procedure1')->name('aiss.procedure1');
-Route::get('/aiss/procedure2', 'AissController@procedure2')->name('aiss.procedure2');
+Route::get('/aiss/procedure1input', 'AissController@procedure1input')->name('aiss.procedure1input');
+Route::post('/aiss/procedure1output', 'AissController@procedure1output')->name('aiss.procedure1output');
+Route::get('/aiss/procedure2input', 'AissController@procedure2input')->name('aiss.procedure2input');
+Route::post('/aiss/procedure2output', 'AissController@procedure2output')->name('aiss.procedure2output');
 Route::get('/aiss/join1', 'AissController@join1')->name('aiss.join1');
 Route::get('/aiss/join2', 'AissController@join2')->name('aiss.join2');
 
