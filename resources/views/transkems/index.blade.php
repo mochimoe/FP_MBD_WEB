@@ -1,4 +1,12 @@
 @extends('layouts.app')
+@section('title')
+    Data Transaksi Pengembalian
+@endsection
+
+@section('sectcss')
+style="padding-top : 5%"
+    
+@endsection
 
 @section('content')
 <style>

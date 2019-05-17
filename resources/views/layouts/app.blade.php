@@ -109,7 +109,7 @@
         </header>
         <!-- End Header Area -->
 
-        <section>
+        <section class="container" @yield('sectcss')>
             @yield('content')
         </section>
     </div>
