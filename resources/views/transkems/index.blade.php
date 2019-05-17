@@ -28,7 +28,7 @@ style="padding-top : 5%"
           <td>ID Petugas</td>
           <td>ID Buku</td>
           <td>Tanggal Pengembalian</td>
-          <td></td>
+          <td>Denda</td>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +39,7 @@ style="padding-top : 5%"
             <td>{{$transkem->id_petugas}}</td>
             <td>{{$transkem->id_buku}}</td>
             <td>{{$transkem->tanggal_pengembalian}}</td>
+            <td>{{$transkem->denda}}</td>
             <td>
                 <form action="{{ route('transkems.destroy', $transkem->id)}}" method="post">
                   @csrf
