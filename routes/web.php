@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ShaniasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,19 @@ Route::get('/aiss/join2', 'AissController@join2')->name('aiss.join2');
 
 #Routing Shania
 Route::resource('shanias','ShaniasController');
+Route::post('shanias','ShaniasController@func1');
+Route::post('shanias','ShaniasController@func2');
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/shanias/view1', 'ShaniasController@view1')->name('shanias.view1');
 Route::get('/shanias/view2', 'ShaniasController@view2')->name('shanias.view2');
 Route::get('/shanias/function1', 'ShaniasController@function1')->name('shanias.function1');

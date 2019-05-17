@@ -26,9 +26,25 @@ class ShaniasController extends Controller
         $join2s = \DB::select('SELECT p.nama, t.`id`
                                 FROM petugass p LEFT JOIN transpims t
                                 ON p.id = t.id_petugas;');
-
-        return view('shanias.index', compact('view1s','view2s','join1s','join2s'));   
+        $trigger1s = \DB::table('log_terlambat')->get();
+        $trigger2s = \DB::table('lograk')->get();
+        
+            
+        return view('shanias.index', compact('view1s','view2s','join1s','join2s','trigger1s','trigger2s'));   
     }
+
+    public function func1(Request $request)
+    {
+        $func1s = \DB::select('cek_rak(:param1)',['param1'=>$request->id_rak]);
+        return view('shanias.index', compact('func1s'));
+    }
+    public function func2(Request $request)
+    {
+        $func2s = \DB::select('pinjam_kategori(:param1)',['param1'=>$request->id_rak]);
+        print_r($func1s);
+        echo"lol";
+    }
+
 
     /**
      * Show the form for creating a new resource.
