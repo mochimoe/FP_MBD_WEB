@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('sectcss')
+style="padding-top : 5%"
+    
+@endsection
+
 @section('content')
 <style>
   .uper {

@@ -15,16 +15,14 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Tanggal</td>
-          <td>Banyak Buku Kembali</td>
+          <td>Nama Anggota</td>
           <td></td>
         </tr>
     </thead>
     <tbody>
-        @foreach($funcs as $func)
+        @foreach($procs as $proc)
         <tr>
-            <td>{{$func->tanggal}}</td>
-            <td>{{$func->banyak_kembali}}</td>
+            <td>{{$proc->nama_anggota}}</td>
             <td></td>
         </tr>
         @endforeach

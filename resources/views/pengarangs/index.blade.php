@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('title')
+    Data Pengarang
+@endsection
+
+@section('sectcss')
+style="padding-top : 5%"
+    
+@endsection
+
 @section('content')
 <style>
   .uper {

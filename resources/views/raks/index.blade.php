@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    Data Rak
+
+@section('sectcss')
+style="padding-top : 5%"
+    
+@endsection
+
 @section('content')
 <style>
   .uper {
