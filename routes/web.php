@@ -41,8 +41,17 @@ Route::post('/bintangs/procedure1output', 'BintangsController@procedure1output')
 Route::get('/bintangs/procedure2', 'BintangsController@procedure2')->name('bintangs.procedure2');
 Route::get('/bintangs/join1', 'BintangsController@join1')->name('bintangs.join1');
 Route::get('/bintangs/join2', 'BintangsController@join2')->name('bintangs.join2');
+Route::get('bintangs/', 'BintangsController@queryindividu')->name('bintangs.index');
+Route::post('bintangs/','BintangsController@prosesData');
+Route::get('/bintangs/queryindividu', 'BintangsController@queryindividu')->name('bintangs.queryindividu');
+Route::post('bintangs/queryindividu','BintangsController@prosesData');
+
 
 #Routing Ais
+Route::get('aiss/', 'AissController@queryindividu')->name('aiss.index');
+Route::post('aiss/','AissController@prosesData');
+Route::get('/aiss/queryindividu', 'AissController@queryindividu')->name('aiss.queryindividu');
+Route::post('aiss/queryindividu','AissController@prosesData');
 Route::get('/aiss/view1', 'AissController@view1')->name('aiss.view1');
 Route::get('/aiss/view2', 'AissController@view2')->name('aiss.view2');
 Route::get('/aiss/function1', 'AissController@function1')->name('aiss.function1');
@@ -58,8 +67,6 @@ Route::get('/aiss/join2', 'AissController@join2')->name('aiss.join2');
 Route::resource('shanias','ShaniasController');
 Route::post('shanias','ShaniasController@prosesData');
 // Route::post('shanias','ShaniasController@func2');
-
-
 Route::get('/shanias/view1', 'ShaniasController@view1')->name('shanias.view1');
 Route::get('/shanias/view2', 'ShaniasController@view2')->name('shanias.view2');
 Route::get('/shanias/function1', 'ShaniasController@function1')->name('shanias.function1');

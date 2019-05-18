@@ -16,6 +16,83 @@ class AissController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function queryindividu($func1=NULL, $func2=NULL, $pros2=NULL)
+    {
+        $view1s = DB::table('meminjam')->get();
+        $view2s = DB::table('kapasitas_rak')->get();
+        $join1s = \DB::select('SELECT a.`id`,a.`nama_anggota`, b.`judul` , k.`jenis`
+        FROM anggotas a JOIN transpims t ON a.`id`=t.`id_anggota`
+        JOIN dipinjams d ON d.`id_pinjam`=t.`id` JOIN bukus b ON d.`id_buku`=b.`id`
+        JOIN mempunyais m ON m.`id_buku`=b.`id` JOIN kategoris k ON k.`id`=m.`id_katagori`;');
+        $join2s = \DB::select('SELECT a.`nama_anggota` , ss.dendaa
+        FROM anggotas a LEFT JOIN (
+            SELECT t.`id` AS pinjam ,t.`id_anggota` AS idanggota , p.`denda` AS dendaa
+            FROM transpims t JOIN transkems p 
+            ON t.`id`=p.`id_pinjam`) AS ss
+        ON a.`id` = ss.idanggota;');
+        $trigger1s = \DB::table('log_anggota')->get();
+        $trigger2s = \DB::table('log_stok')->get();
+        return view('aiss.queryindividu', compact('view1s','view2s','join1s','join2s','trigger1s','trigger2s', 'func1', 'func2','pros2'));   
+    }
+
+    public function prosesData(Request $request){
+        if ($request->has('param1_fungsi1')) {
+
+            //echo "disini 1";
+
+            //handle form1
+            $param1 = $request->param1_fungsi1;
+            $func1s = \DB::select('select func1(?)',[$param1]);
+            //print_r($fu-1];nc1s[$param1-1]);
+            $arraytanggal = array($func1s, $param1);
+    
+           return AissController::queryindividu($arraytanggal, NULL, NULL);
+        }
+
+        if ($request->has('param1_prosedur1')) {
+
+            //echo "disini 1";
+
+            //handle form1
+            $param3 = $request->param1_prosedur1;
+            $param32 = $request->param2_prosedur1;
+            $proc1s = \DB::select('call proc1(?, ?)',[$param3,$param32]);
+            //print_r($proc1s);
+            //print_r($fu-1];nc1s[$param1-1]);
+            
+           return AissController::queryindividu(NULL,NULL, NULL);
+        }
+
+        if ($request->has('param1_prosedur2')) {
+
+            //echo "disini 1";
+
+            //handle form1
+            $param3 = $request->param1_prosedur2;
+            $proc2s = \DB::select('call proc2(?)',[$param3]);
+            //print_r($proc1s);
+            //print_r($fu-1];nc1s[$param1-1]);
+            
+           return AissController::queryindividu(NULL,NULL, $proc2s);
+        }
+
+        if ($request->has('param1_fungsi2')) {
+            //echo("disini 2");
+
+            $param2 = $request->param1_fungsi2;
+            // print_r($param2);
+            // echo(" beriku: ");
+            $func2s = \DB::select('select func2(?)',[$param2]);
+    
+            // print_r($func1s);
+            // echo"lol";
+             //print_r($func2s);
+             $arrayhasil = array($func2s, $param2);
+            // print_r($res);
+           return AissController::queryindividu(NULL, $res,NULL);
+        }
+    }
+
     public function view1()
     {
         $views = DB::table('meminjam')->get();

@@ -15,6 +15,68 @@ class BintangsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function queryindividu($func1=NULL, $func2=NULL)
+    {
+        $view1s = \DB::table('judul_banyak_dipinjam')->get();
+        $view2s = \DB::table('judul_pengarang_jenis')->get();
+        $join1s = \DB::select('SELECT judul, tanggal_pinjam, tanggal_pengembalian FROM 
+        (SELECT judul, tanggal_pinjam, tanggal_kembali, tp.id AS idpinjam 
+        FROM dipinjams dp JOIN transpims tp ON dp.id_pinjam = tp.id 
+        JOIN bukus b ON b.id= dp.id_buku) AS t 
+        LEFT JOIN transkems tk ON t.idpinjam = tk.id_pinjam');
+        $join2s = \DB::select('SELECT nama_anggota AS nama, judul FROM 
+        dipinjams dp JOIN transpims tp ON dp.id_pinjam = tp.id
+        JOIN anggotas a ON a.id = tp.id_anggota
+        JOIN bukus b ON b.id = dp.id_buku;');
+        $trigger1s = \DB::table('log_pinjam_kembali')->get();
+        $proc2s= \DB::select('call tidakpinjam()');
+        return view('bintangs.queryindividu', compact('view1s','view2s','join1s','join2s','trigger1s','proc2s', 'func1', 'func2'));   
+    }
+
+    public function prosesData(Request $request){
+        if ($request->has('param1_fungsi1')) {
+
+            //echo "disini 1";
+
+            //handle form1
+            $param1 = $request->param1_fungsi1;
+            $func1s = \DB::select('select nama_anggota as nama, cekumursekarang(?) as umur from anggotas where id = ?',[$param1,$param1]);
+            //print_r($fu-1];nc1s[$param1-1]);
+            $arrayumur = $func1s[$param1];
+    
+           return BintangsController::queryindividu($arrayumur, NULL);
+        }
+
+        if ($request->has('param1_prosedur1')) {
+
+            //echo "disini 1";
+
+            //handle form1
+            $param3 = $request->param1_prosedur1;
+            $proc1s = \DB::select('call hitungdenda(?)',[$param3]);
+            //print_r($proc1s);
+            //print_r($fu-1];nc1s[$param1-1]);
+    
+           return BintangsController::queryindividu(NULL,NULL);
+        }
+
+        if ($request->has('param1_fungsi2')) {
+            //echo("disini 2");
+
+            $param2 = $request->param1_fungsi2;
+            // print_r($param2);
+            // echo(" beriku: ");
+            $func2s = \DB::select('select nama_anggota as nama,banyakpinjam(?) as res from anggotas where id = ?',[$param2,$param2]);
+    
+            // print_r($func1s);
+            // echo"lol";
+             //print_r($func2s);
+            $res = $func2s[0];
+            // print_r($res);
+           return BintangsController::queryindividu(NULL, $res);
+        }
+    }
+
     public function view1()
     {
         $views = DB::table('judul_buku_nama_pengarang')->get();
@@ -93,7 +155,7 @@ class BintangsController extends Controller
 
     public function index()
     {
-        //
+        
     }
 
     /**
