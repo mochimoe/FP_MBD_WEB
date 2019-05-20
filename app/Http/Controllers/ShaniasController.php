@@ -28,14 +28,14 @@ class ShaniasController extends Controller
                                 ON p.id = t.id_petugas;');
         $trigger1s = \DB::table('log_terlambat')->get();
         $trigger2s = \DB::table('log_rak')->get();
+        $tabel1s = \DB::table('transkems')->get();
+        $tabel2s = \DB::table('raks')->get();
             
-        return view('shanias.index', compact('view1s','view2s','join1s','join2s','trigger1s','trigger2s', 'func1', 'func2'));   
+        return view('shanias.index', compact('view1s','view2s','join1s','join2s','trigger1s','trigger2s', 'func1', 'func2','tabel1s','tabel2s'));   
     }
 
     public function prosesData(Request $request){
         if ($request->has('id_rak')) {
-
-            echo "disini 1";
 
             //handle form1
             $param1 = $request->id_rak;
@@ -47,7 +47,6 @@ class ShaniasController extends Controller
             return ShaniasController::index($res, NULL);
         }
         if ($request->has('katagori_buku')) {
-            echo("disini 2");
 
             $param2 = $request->katagori_buku;
             // print_r($param2);
@@ -61,6 +60,17 @@ class ShaniasController extends Controller
             // print_r($res);
             return ShaniasController::index(NULL, $res);
         }
+        if($request->has('idd')) {
+            $param1 = $request->idd;
+            $proc2s = \DB::select('call upd_kapraks(?)',[$param1,$param1]);
+            return ShaniasController::index(NULL, NULL);
+        }
+    }
+
+    public function execProc()
+    {
+        $proc1s= \DB::select('call denda_naik()');
+        return ShaniasController::index(NULL, NULL);
     }
 
     public function func1(Request $request)
