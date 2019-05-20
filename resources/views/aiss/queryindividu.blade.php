@@ -316,11 +316,11 @@
                   </div>
               </div>
               <div class="col-lg-6">
-                  <h6 class="card-title text-uppercase text-center">Fungsi 2</h6>
+                  <h6 class="card-title text-uppercase text-center">Fugnsi Banyak Anggota yang Meminjam pada Tangal Tertentu</h6>
                   <form method="post" action="{{url('aiss/queryindividu')}}">
                       <div class="form-group">
                           @csrf
-                          <h6 class="card-title text-left">Fugnsi Banyak Anggota yang Meminjam pada Tangal Tertentu :</h6>
+                          <h6 class="card-title text-left"> Tanggal:</h6>
                           <input type="text" class="form-control" name="param1_fungsi2"/> 
                       </div>
                       <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
