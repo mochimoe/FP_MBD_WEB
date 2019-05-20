@@ -150,7 +150,7 @@
                     <div class="col-lg-4">
                         <div class="card mb-5 mb-lg-10">
                           <div class="card-body">
-                            <h5 class="card-title text-muted text-uppercase text-center">Daftar judul dan Waktu Peminjaman</h5>
+                            <h5 class="card-title text-muted text-uppercase text-center">Daftar Denda Anggota</h5>
                             <hr>
                             <a class="btn btn-block btn-primary text-uppercase" data-toggle="modal" href="#modalJoin1" role="button" aria-expanded="false" aria-controls="modalJoin1">
                                 Tampilkan
@@ -160,7 +160,7 @@
                                 <div class = "modal-content">
                                     <div class="card card-body">
                                         <div class="modal-header">
-                                          <h5 class="card-title text-muted text-uppercase text-center">Daftar judul dan Waktu Peminjaman</h5>
+                                          <h5 class="card-title text-muted text-uppercase text-center">Daftar Denda Anggota</h5>
                                         </div>
                                         <div class="modal-body">
                                             <table class="table table-striped">
@@ -191,7 +191,7 @@
                       <div class="col-lg-4">
                           <div class="card mb-5 mb-lg-0">
                             <div class="card-body">
-                              <h5 class="card-title text-muted text-uppercase text-center">Log Peminjaman dan Pengembalian</h5>
+                              <h5 class="card-title text-muted text-uppercase text-center">Log Anggota</h5>
                               <hr>
                               <a class="btn btn-block btn-primary text-uppercase" data-toggle="modal" href="#modalTrigger1" role="button" aria-expanded="false" aria-controls="modalTrigger1">
                                   Tampilkan
@@ -201,7 +201,7 @@
                                   <div class = "modal-content">
                                       <div class="card card-body">
                                           <div class="modal-header">
-                                            <h5 class="card-title text-muted text-uppercase text-center">Log Peminjaman dan Pengembalian</h5>
+                                            <h5 class="card-title text-muted text-uppercase text-center">Log Anggota</h5>
                                           </div>
                                           <div class="modal-body">
                                               <table class="table table-striped">
@@ -246,7 +246,7 @@
                        <div class="col-lg-4">
                           <div class="card mb-5 mb-lg-0">
                             <div class="card-body">
-                              <h5 class="card-title text-muted text-uppercase text-center">Prosedur Daftar Terlambat</h5>
+                              <h5 class="card-title text-muted text-uppercase text-center">Log Stok Buku</h5>
                               <hr>
                               <a class="btn btn-block btn-primary text-uppercase" data-toggle="modal" href="#modalTrigger2" role="button" aria-expanded="false" aria-controls="modalTrigger2">
                                   Tampilkan
@@ -256,7 +256,7 @@
                                   <div class = "modal-content">
                                       <div class="card card-body">
                                           <div class="modal-header">
-                                            <h5 class="card-title text-muted text-uppercase text-center">Daftar Peminjam yang Terlambat</h5>
+                                            <h5 class="card-title text-muted text-uppercase text-center">Log Stok Buku</h5>
                                           </div>
                                           <div class="modal-body">
                                               <table class="table table-striped">
@@ -297,8 +297,8 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-6">
-                <h6 class="card-title text-uppercase text-center">Fungsi 1</h6>
-                <form method="post" action="{{url('bintangs/queryindividu')}}">
+                <h6 class="card-title text-uppercase text-center">Fugnsi Banyak Anggota yang Mengembalikan pada Tangal Tertentu</h6>
+                <form method="post" action="{{url('aiss/queryindividu')}}">
                     <div class="form-group">
                         @csrf
                       <h6 class="card-title text-left">Tanggal :</h6>
@@ -310,36 +310,36 @@
                 </form>
                   <div class="container">
                       @if(!empty($func1))
-                          <h4>Nama: {{ $func1[0] }}</h4>
-                          <h4>Nama: {{ $func1[1] }}</h4>
+                          <h4>Tanggal: {{ $func1[0] }}</h4>
+                          <h4>Banyak Anggota: {{ $func1[1] }}</h4>
                                           @endif
                   </div>
               </div>
               <div class="col-lg-6">
                   <h6 class="card-title text-uppercase text-center">Fungsi 2</h6>
-                  <form method="post" action="{{url('bintangs/queryindividu')}}">
+                  <form method="post" action="{{url('aiss/queryindividu')}}">
                       <div class="form-group">
                           @csrf
-                          <h6 class="card-title text-left">Tanggal :</h6>
+                          <h6 class="card-title text-left">Fugnsi Banyak Anggota yang Meminjam pada Tangal Tertentu :</h6>
                           <input type="text" class="form-control" name="param1_fungsi2"/> 
                       </div>
                       <button type="submit" class="btn btn-secondary md-lg-5" style="padding: 10px 24px;">Cek</button>
                   </form>
                     <div class="container">
                         @if(!empty($func2))
-                        nama: {{ $func2[0] }}
-                                    Jumlah buku yang dipinjam: {{ $func2[1] }}
+                        Tanggal: {{ $func2[0] }}
+                                    Banyak Peminjam: {{ $func2[1] }}
                         @endif
                       </div>
                 </div>
                 <div class="col-lg-6">
-                  <h6 class="card-title text-uppercase text-center">Pros 1</h6>
-                  <form method="post" action="{{url('bintangs/queryindividu')}}">
+                  <h6 class="card-title text-uppercase text-center">Prosedur Mengubah Stok</h6>
+                  <form method="post" action="{{url('aiss/queryindividu')}}">
                       <div class="form-group">
                           @csrf
                           <h6 class="card-title text-left">Id Buku :</h6>
                           <input type="text" class="form-control" name="param1_prosedur1"/> 
-                          <h6 class="card-title text-left">Stok :</h6>
+                          <h6 class="card-title text-left">Stok Baru :</h6>
                           <input type="text" class="form-control" name="param2_prosedur1"/> 
                       
                       </div>
@@ -350,8 +350,8 @@
                       </div>
                 </div>
                 <div class="col-lg-6">
-                <h6 class="card-title text-uppercase text-center">Pros 2</h6>
-                <form method="post" action="{{url('bintangs/queryindividu')}}">
+                <h6 class="card-title text-uppercase text-center">Prosedur Mengecek nama</h6>
+                <form method="post" action="{{url('aiss/queryindividu')}}">
                     <div class="form-group">
                         @csrf
                       <h6 class="card-title text-left">Nama :</h6>
